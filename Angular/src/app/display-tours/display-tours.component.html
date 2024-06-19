@@ -1,0 +1,15 @@
+<p>display-tours works!</p>
+<div class="content" *ngIf="tour.length; else noTours">
+     <h1> List of Tours</h1>
+    <div class="items" *ngFor="let tour of tour;let i =index" >
+        <p>Tour:{{tour.Name}}</p>
+        <p><img src="{{tour.Image}}"></p>
+         <p>Description:{{tour.Description}}</p>
+          <p>Destination:{{tour.Destination}}</p>
+           <p>Price:{{tour.Price}}</p>
+        <button (click)="deleteTour(i)">Delete</button>
+    </div>
+</div>
+<ng-template #noTours>
+    <i> List empty Kindly Add a Tour!!!</i>
+  </ng-template>
