@@ -1,0 +1,13 @@
+.container{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: green;
+    width: 100vw;
+    align-items: center;
+    height: 150px;
+}
+
+.container a{
+    color: white;
+    text-decoration: none;
+}

@@ -1,0 +1,16 @@
+<!-- <p>display-hotels works!</p> -->
+<div class="main">
+     <h1>List of Tours</h1>
+<div class="content" *ngIf="hotels; else noHotels">
+ 
+  <div class="items" *ngFor="let hotel of hotels">
+    <p>Hotel:{{hotel.Hotelname  }}</p>
+    <p><img src="{{ hotel.Hotelimage }}" /></p>
+    <p>Description:{{ hotel.Hlocation }}</p>
+    <button (click)="deleteHotel(hotel.ID)">Delete</button>
+  </div>
+</div>
+<ng-template #noHotels>
+  <i> List empty Kindly Add a Tour!!!</i>
+</ng-template>
+</div>
