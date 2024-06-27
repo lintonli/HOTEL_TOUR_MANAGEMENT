@@ -13,12 +13,12 @@
         <h2>Login</h2>
         <form id="login" (ngSubmit)="onSubmit()" [formGroup]="form">
           <label for="login-username">Username</label>
-          <input type="text" id="login-username" name="username"  formControlName="UNAME" />
+          <input type="text" id="login-username" name="username"  formControlName="EMAIL" />
           <label for="login-password">Password</label>
-          <input type="password" id="login-password" name="password" formControlName="UPASSWORD" />
+          <input type="password" id="login-password" name="password" formControlName="PASSWORD" />
           <button type="submit"[disabled]='!form.valid'>Login</button>
         </form>
-        <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+        <div *ngIf="form.invalid" class="error">{{ errorMessage }}</div>
         <h4>
           <i>
             Don't have an account?<a routerLink="/register">Click here.</a>to create

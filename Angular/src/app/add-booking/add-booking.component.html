@@ -1,6 +1,6 @@
-<!-- <p>add-booking works!</p> -->
- <div class="content">
-    <form (ngSubmit)="onSubmit()" [formGroup]="form">
+
+ <!-- <div class="content1"> -->
+    <form (ngSubmit)="onSubmit()" [formGroup]="form" class="content1">
 <div class="content">
     <label for="bstart"> Start Date</label>
     <input type="datetime" formControlName="sdate">
@@ -15,4 +15,4 @@
 </div>
 <button  type="submit" [disabled]="form.invalid">Add Booking</button>
     </form>
- </div>
+ <!-- </div> -->

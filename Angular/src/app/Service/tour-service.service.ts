@@ -8,7 +8,7 @@ export class TourServiceService {
   constructor() {}
   private tours: ITour[] = [
     {
-      ID: 1,
+      ID: "1",
       Name: 'Bonfire Adventures',
       Image:
         'https://cdn.pixabay.com/photo/2023/06/21/17/09/savannah-8079856_640.jpg',
@@ -17,7 +17,7 @@ export class TourServiceService {
       Price: 33000,
     },
     {
-      ID: 1,
+      ID: "1",
       Name: 'Bonfire Adventures',
       Image:
         'https://cdn.pixabay.com/photo/2023/06/21/17/09/savannah-8079856_640.jpg',
@@ -26,7 +26,7 @@ export class TourServiceService {
       Price: 33000,
     },
     {
-      ID: 1,
+      ID: "1",
       Name: 'Bonfire Adventures',
       Image:
         'https://cdn.pixabay.com/photo/2023/06/21/17/09/savannah-8079856_640.jpg',
@@ -44,16 +44,16 @@ export class TourServiceService {
   getTours(){
     return this.tours;
   }
-  getTour(id:number){
+  getTour(id:string){
     return this.tours.find(x=>x.ID===id);
   }
-  deleteTour(id:number){
+  deleteTour(id:string){
     const index = this.tours.findIndex(x=>x.ID ===id)
     if(index>0){
       this.tours.splice(index,1)
     }
   }
-  updateTour(id:number, updatedTour:ITour){
+  updateTour(id:string, updatedTour:ITour){
     const index = this.tours.findIndex((x) => x.ID === id);
     if (index > 0) {
       this.tours[index]=updatedTour

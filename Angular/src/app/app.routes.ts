@@ -6,6 +6,7 @@ import { DisplayBookingComponent } from './display-booking/display-booking.compo
 import { DisplayHotelsComponent } from './display-hotels/display-hotels.component';
 import { DisplayToursComponent } from './display-tours/display-tours.component';
 import { authGuard } from './Guards/auth.guard';
+import { AddBookingComponent } from './add-booking/add-booking.component';
 
 export const routes: Routes = [
     {path:"",component:HomeComponent},
@@ -13,5 +14,6 @@ export const routes: Routes = [
     {path:'register', component:SignupComponent},
     {path: 'bookings', component:DisplayBookingComponent},
     {path:'hotels', component:DisplayHotelsComponent},
-    {path:'tours', component:DisplayToursComponent, canActivate:[authGuard]}
+    {path:'tours', component:DisplayToursComponent, canActivate:[authGuard]},
+    {path:'booking/:id', component:AddBookingComponent, canActivate:[authGuard]}
 ];

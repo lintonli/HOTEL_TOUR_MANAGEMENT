@@ -3,7 +3,8 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { DataService } from '../services/data.service';
 import { IUser } from '../Models/users';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { AuthenticationService } from '../Service/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -18,21 +19,29 @@ export class LoginComponent implements OnInit{
 users:IUser[]=[]
 form!:FormGroup
 errorMessage:string=''
-constructor(private data:DataService){}
+constructor(private data:AuthenticationService, private router:Router){}
 
 onSubmit(){
 if(this.form.valid){
-  const{UNAME,UPASSWORD}= this.form.value
-  if(this.data.login(UNAME,UPASSWORD)){
-    console.log('user logged in success')
+ this.data.login(this.form.value).subscribe(res=>{
+  localStorage.setItem('token',res.token)
+  this.errorMessage = res.message
+  if(res.token){
+this.router.navigate([""])
   }
-  this.errorMessage='invalid user credentials'
+ },
+ err=>{
+console.log(err)
+this.errorMessage=err.console.error.message;
+
+  }
+)
 }
 }
 ngOnInit(): void {
   this.form= new FormGroup({
-    UNAME: new FormControl(null, Validators.required),
-    UPASSWORD: new FormControl(null, [Validators.required])
+    EMAIL: new FormControl(null, Validators.required),
+    PASSWORD: new FormControl(null, [Validators.required])
   })
 }
 }

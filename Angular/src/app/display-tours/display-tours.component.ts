@@ -2,6 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component,EventEmitter,Input, OnInit, Output } from '@angular/core';
 import { TourServiceService } from '../Service/tour-service.service';
 import { ITour } from '../Models/tours';
+import { DataService } from '../services/data.service';
+import { IBooking } from '../Models/bookings';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-display-tours',
@@ -26,13 +29,14 @@ export class DisplayToursComponent implements OnInit {
 
   // }
   tours!:ITour[]
-  constructor(private ts:TourServiceService){}
+  booking!:IBooking[]
+  constructor(private ts:TourServiceService, private bs:DataService, private router:Router){}
 
   ngOnInit(): void {
    this.tours= this.ts.getTours()
   }
 
-  deleteTour(ID:number){
-    this.ts.deleteTour(ID)
+  book(ID:string){
+    this.router.navigate(['hotels'])
   }
 }

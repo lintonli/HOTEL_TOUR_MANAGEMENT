@@ -9,7 +9,7 @@
     <p>Description:{{ tour.Description }}</p>
     <p>Destination:{{ tour.Destination }}</p>
     <p>Price:{{ tour.Price | currency:"KSH "}}</p>
-    <button (click)="deleteTour(tour.ID)">Delete</button>
+    <button (click)="book(tour.ID)">BOOK NOW</button>
   </div>
 </div>
 <ng-template #noTours>

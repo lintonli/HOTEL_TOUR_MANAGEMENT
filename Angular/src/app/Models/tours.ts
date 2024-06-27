@@ -1,5 +1,5 @@
 export interface ITour {
-  ID: number;
+  ID:string;
   Name: string;
   Image: string;
   Description: string;

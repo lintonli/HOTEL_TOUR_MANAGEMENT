@@ -40,7 +40,7 @@ constructor(private ts:TourServiceService){}
 
   addTour(){
     let tour:ITour={
-      ID:this.ts.getTours().length +1,
+      ID:(this.ts.getTours().length +1).toString(),
       Name:this.name,
       Image:this.image,
       Description:this.description,
