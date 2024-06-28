@@ -4,12 +4,12 @@
 <div class="content" *ngIf="tours; else noTours">
  
   <div class="items" *ngFor="let tour of tours">
-    <p>Tour:{{ tour.Name }}</p>
-    <p><img src="{{ tour.Image }}" /></p>
-    <p>Description:{{ tour.Description }}</p>
-    <p>Destination:{{ tour.Destination }}</p>
-    <p>Price:{{ tour.Price | currency:"KSH "}}</p>
-    <button (click)="book(tour.ID)">BOOK NOW</button>
+    <p>Tour:{{ tour.Tourname }}</p>
+    <p><img src="{{ tour.Tourimage }}" /></p>
+    <p>Description:{{ tour.TDescription }}</p>
+    <p>Destination:{{ tour.TDestination }}</p>
+    <p>Price:{{ tour.TPrice | currency:"KSH "}}</p>
+    <button (click)="book(tour.Id)">BOOK NOW</button>
   </div>
 </div>
 <ng-template #noTours>

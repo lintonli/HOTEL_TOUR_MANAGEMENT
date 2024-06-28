@@ -13,7 +13,8 @@ export const routes: Routes = [
     {path:'login', component:LoginComponent},
     {path:'register', component:SignupComponent},
     {path: 'bookings', component:DisplayBookingComponent},
-    {path:'hotels', component:DisplayHotelsComponent},
+    {path:'hotels/:TourId', component:DisplayHotelsComponent, canActivate:[authGuard]},
     {path:'tours', component:DisplayToursComponent, canActivate:[authGuard]},
-    {path:'booking/:id', component:AddBookingComponent, canActivate:[authGuard]}
+    {path:'booking/:tourId/:hotelId', component:AddBookingComponent, canActivate:[authGuard]},
+    {path:'bookings', component:DisplayBookingComponent}
 ];

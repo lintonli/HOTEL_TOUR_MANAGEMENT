@@ -3,15 +3,15 @@
     <form (ngSubmit)="onSubmit()" [formGroup]="form" class="content1">
 <div class="content">
     <label for="bstart"> Start Date</label>
-    <input type="datetime" formControlName="sdate">
+    <input type="date" formControlName="sdate">
 </div>
 <div class="content">
     <label for="bstart"> End Date</label>
-    <input type="datetime" formControlName="edate">
+    <input type="date" formControlName="edate">
 </div>
 <div class="content">
     <label for="bstart"> BookingDate</label>
-    <input type="datetime" formControlName="bdate">
+    <input type="date" formControlName="bdate">
 </div>
 <button  type="submit" [disabled]="form.invalid">Add Booking</button>
     </form>

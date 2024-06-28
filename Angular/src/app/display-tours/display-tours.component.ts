@@ -33,10 +33,13 @@ export class DisplayToursComponent implements OnInit {
   constructor(private ts:TourServiceService, private bs:DataService, private router:Router){}
 
   ngOnInit(): void {
-   this.tours= this.ts.getTours()
+  //  this.tours= this.ts.getTours()
+  this.ts.getTours().subscribe(tours=>{
+    this.tours= tours
+  })
   }
 
   book(ID:string){
-    this.router.navigate(['hotels'])
+    this.router.navigate(['hotels', ID])
   }
 }

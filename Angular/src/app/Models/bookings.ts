@@ -8,3 +8,15 @@ export interface IBooking {
   bookingdate: string;
   bstatus: string;
 }
+export interface BookingRequest {
+  userId: string;
+  tourId: string;
+  hotelId: string;
+  bstartdate: string;
+  benddate: string;
+  bookingdate: string;
+  
+}
+export interface BookingResponse{
+  message:string
+}

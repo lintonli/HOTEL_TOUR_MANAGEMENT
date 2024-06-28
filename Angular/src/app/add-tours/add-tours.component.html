@@ -1,16 +1,16 @@
-<p>add-tours works!</p>
+<!-- <p>add-tours works!</p> -->
 <div class="main">
-  <div class="content">
+  <form class="content" [formGroup]="form" (ngSubmit)="onSubmit()">
     <label for="Name">Tour Name</label>
-    <input type="text" [(ngModel)]="name" />
+    <input type="text" formControlName="NAME" />
     <label for="image">Tour Image</label>
-    <input type="text" [(ngModel)]="image" />
+    <input type="text" formControlName="IMAGE" />
     <label for="description">Tour Description</label>
-    <input type="text" [(ngModel)]="description" />
+    <input type="text" formControlName="DESCRIPTION" />
     <label for="desination">Tour Destination</label>
-    <input type="text" [(ngModel)]="destination" />
+    <input type="text" formControlName="DESTINATION" />
     <label for="price">Tour Price</label>
-    <input type="number" [(ngModel)]="price" />
-    <button (click)="addTour()">Add</button>
-  </div>
+    <input type="number" formControlName="PRICE" />
+    <button>Add</button>
+  </form>
 </div>

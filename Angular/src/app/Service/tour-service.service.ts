@@ -1,62 +1,31 @@
 import { Injectable } from '@angular/core';
-import { ITour } from '../Models/tours';
+import { ITour, TourRequest, TourResponse } from '../Models/tours';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TourServiceService {
-  constructor() {}
-  private tours: ITour[] = [
-    {
-      ID: "1",
-      Name: 'Bonfire Adventures',
-      Image:
-        'https://cdn.pixabay.com/photo/2023/06/21/17/09/savannah-8079856_640.jpg',
-      Description: 'The best tour company',
-      Destination: 'Maasai-Mara',
-      Price: 33000,
-    },
-    {
-      ID: "1",
-      Name: 'Bonfire Adventures',
-      Image:
-        'https://cdn.pixabay.com/photo/2023/06/21/17/09/savannah-8079856_640.jpg',
-      Description: 'The best tour company',
-      Destination: 'Maasai-Mara',
-      Price: 33000,
-    },
-    {
-      ID: "1",
-      Name: 'Bonfire Adventures',
-      Image:
-        'https://cdn.pixabay.com/photo/2023/06/21/17/09/savannah-8079856_640.jpg',
-      Description: 'The best tour company',
-      Destination: 'Maasai-Mara',
-      Price: 33000,
-    },
-  ];
+  private readonly Base_Url = 'http://localhost:4001/tours';
+  constructor(private http:HttpClient) {}
+  
 
-
-  addTour(newTour:ITour){
-    this.tours.push(newTour)
+  addTour(newTour: TourRequest): Observable<TourResponse> {
+  
+    return this.http.post<TourResponse>(this.Base_Url,newTour)
   }
 
-  getTours(){
-    return this.tours;
+  getTours(): Observable<ITour[]> {
+    return this.http.get<ITour[]>(this.Base_Url)
   }
-  getTour(id:string){
-    return this.tours.find(x=>x.ID===id);
+  getTour(Id: string):Observable<ITour> {
+    return this.http.get<ITour>(this.Base_Url + Id)
   }
-  deleteTour(id:string){
-    const index = this.tours.findIndex(x=>x.ID ===id)
-    if(index>0){
-      this.tours.splice(index,1)
-    }
+  deleteTour(Id: string):Observable<TourResponse> {
+    return this.http.delete<TourResponse>(this.Base_Url + Id);
   }
-  updateTour(id:string, updatedTour:ITour){
-    const index = this.tours.findIndex((x) => x.ID === id);
-    if (index > 0) {
-      this.tours[index]=updatedTour
-    }
-  }
+  updateTour(Id: string, updatedTour: TourRequest):Observable<TourResponse> {
+    return this.http.patch<TourResponse>(this.Base_Url + Id, updatedTour)
+}
 }
