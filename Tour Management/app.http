@@ -1,5 +1,5 @@
 POST  http://localhost:4001/tours
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTVUIiOiJjOGFjMDQwZS1hMmVhLTRkYmYtOWJmMS04Y2MyYmUxNmNhZjIiLCJVTkFNRSI6IkxpbnRvbiIsImlhdCI6MTcxODYxMzQ0MiwiZXhwIjoxNzE4NjE3MDQyfQ.3nrxaMcDHD_it952--pYtCqhKqRxq81l4tRR1BuO5Qg
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTVUIiOiI1MDIwNDFjMS0yYWYxLTQxZmQtOGY2Ni04M2I1YzhmYTkyZDYiLCJVTkFNRSI6IkVkaW11bmQiLCJVUk9MRSI6IkFETUlOIiwiaWF0IjoxNzE5NTExNTQ5LCJleHAiOjE3MTk1MTUxNDl9.LilfLxVvHWiAgXl080GPpm-EwFZFjYZ7s9l_ynKOmhM
 Content-Type: application/json
 
 {
@@ -38,23 +38,23 @@ Content-Type: application/json
 
 ####
 
- POST  http://localhost:4001/users/login
+POST  http://localhost:4001/users/login
  Content-Type: application/json
 
  {
-      "EMAIL": "joe@gmail.com",
-    "PASSWORD": "Jona@123"
+      "EMAIL": "lintonli162@gmail.com",
+    "PASSWORD": "Lint@123"
  }
 
 ###
- POST  http://localhost:4001/users/register
+POST  http://localhost:4001/users/register
  Content-Type: application/json
 
  {
-      "NAME": "Edimund",
-    "EMAIL": "lintonli162@gmail.com",
-    "PASSWORD": "Lint@123",
-    "ROLE":"ADMIN"
+      "NAME": "Linton",
+    "EMAIL": "lintonmw@ueab.ac.ke",
+    "PASSWORD": "Linton@123"
+    
  }
 
 ####
@@ -107,8 +107,8 @@ Content-Type: application/json
     "hotelId":"6d6f4f47-f40f-40e3-8c97-bde4efea2d93",
     "bstartdate":"20/6/2024",
     "benddate":"30/6/2024",
-    "bookingdate":"18/6/2024",
-    "bstatus":"Booked"
+    "bookingdate":"18/6/2024"
+  
 }
 
 ###

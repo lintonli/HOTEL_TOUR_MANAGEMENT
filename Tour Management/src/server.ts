@@ -3,8 +3,11 @@ import tourRoute from './Routes/tourRoutes'
 import userRoute from './Routes/userRoutes'
 import hotelRoute from './Routes/hotelRoutes'
 import bookingRoute from './Routes/bookingRoutes'
+import cors from 'cors'
+
 const app = express()
 app.use(json())
+app.use(cors())
 
 app.use("/tours", tourRoute)
 app.use("/users", userRoute)

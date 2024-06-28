@@ -6,7 +6,7 @@ import Joi from "joi";
    bstartdate: Joi.string().required(),
    benddate: Joi.string().required(),
    bookingdate: Joi.string().required(),
-   bstatus: Joi.string().required(),
+  //  bstatus: Joi.string().required(),
  });
 
   export const BookingSchema1 = Joi.object({
@@ -16,5 +16,5 @@ import Joi from "joi";
     bstartdate: Joi.string().required(),
     benddate: Joi.string().required(),
     bookingdate: Joi.string().required(),
-    bstatus: Joi.string().required(),
+    // bstatus: Joi.string().required(),
   });

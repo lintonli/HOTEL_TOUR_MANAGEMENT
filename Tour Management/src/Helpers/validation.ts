@@ -8,6 +8,6 @@ export const RegisterSchema = Joi.object({
       new RegExp(
         /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
       )
-    ),
-    ROLE:Joi.string().required(),
+    )
+    // ROLE:Joi.string().required(),
 });

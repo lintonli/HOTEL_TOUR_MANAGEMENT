@@ -4,11 +4,12 @@ export interface IUser {
   EMAIL: string;
   UPASSWORD: string;
   isDeleted: number;
-  ROLE:string,
+  UROLE:string,
   isEmailSent: number;
 }
+
 export interface Payload {
   SUB: string;
   UNAME: string;
-  ROLE:string;
+  UROLE:string;
 }

@@ -74,8 +74,9 @@ export const updateBooking = async (
       await databaseInstance.exec("getBooking", { ID: req.params.id })
     ).recordset[0] as IBooking;
     if (booking && booking.Id) {
-      const {userId,tourId, hotelId, bstartdate, benddate, bookingdate,bstatus } =
+      const {userId,tourId, hotelId, bstartdate, benddate, bookingdate } =
         req.body;
+        const bstatus="BOOKED"
       await databaseInstance.exec("updateBooking", {
         ID: req.params.id,
         USERID: userId,
