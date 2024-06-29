@@ -5,6 +5,7 @@ import { ITour } from '../Models/tours';
 import { DataService } from '../services/data.service';
 import { IBooking } from '../Models/bookings';
 import { Router } from '@angular/router';
+import { jwtDecode } from 'jwt-decode';
 
 @Component({
   selector: 'app-display-tours',
@@ -14,26 +15,19 @@ import { Router } from '@angular/router';
   styleUrl: './display-tours.component.css',
 })
 export class DisplayToursComponent implements OnInit {
-//   @Input() tour: {
-//     Name: string;
-//     Image: string;
-//     Description: string;
-//     Destination: string;
-//     Price: number;
-//   }[] = [];
 
-//   @Output() onDelete:EventEmitter<{id:number}>= new EventEmitter()
-//   deleteTour(i:number){
-// this.onDelete.emit({id:i})
-// console.log("deleted");
-
-  // }
   tours!:ITour[]
   booking!:IBooking[]
+  role:string=''
   constructor(private ts:TourServiceService, private bs:DataService, private router:Router){}
 
   ngOnInit(): void {
   //  this.tours= this.ts.getTours()
+  const token = localStorage.getItem('token')
+  if(token){
+    const decode:any = jwtDecode(token)
+    this.role=decode.UROLE
+  }
   this.ts.getTours().subscribe(tours=>{
     this.tours= tours
   })
@@ -41,5 +35,14 @@ export class DisplayToursComponent implements OnInit {
 
   book(ID:string){
     this.router.navigate(['hotels', ID])
+  }
+  editTour(Id:string){
+    this.router.navigate(['add-tour', Id])
+  }
+  deleteTour(Id:string){
+    this.ts.deleteTour(Id).subscribe(()=>{
+      console.log('Tour deleted successfully')
+      this.tours= this.tours.filter(t=>t.Id!==Id)
+    })
   }
 }

@@ -8,6 +8,8 @@
     <p><img src="{{ hotel.Hotelimage }}" /></p>
     <p>Description:{{ hotel.Hlocation }}</p>
     <button (click)="BOOK(hotel.ID)">BOOK NOW</button>
+    <button *ngIf="role === 'ADMIN'" (click)="editHotel(hotel.ID)">Edit</button>
+      <button *ngIf="role === 'ADMIN'" (click)="deleteHotel(hotel.ID)">Delete</button>
   </div>
 </div>
 <ng-template #noHotels>

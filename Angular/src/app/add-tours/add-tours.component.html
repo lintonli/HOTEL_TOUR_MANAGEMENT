@@ -1,5 +1,6 @@
 <!-- <p>add-tours works!</p> -->
 <div class="main">
+  <h2>{{Id?'Add Tour': 'Update Tour'}}</h2>
   <form class="content" [formGroup]="form" (ngSubmit)="onSubmit()">
     <label for="Name">Tour Name</label>
     <input type="text" formControlName="NAME" />
@@ -11,6 +12,6 @@
     <input type="text" formControlName="DESTINATION" />
     <label for="price">Tour Price</label>
     <input type="number" formControlName="PRICE" />
-    <button>Add</button>
+    <button type="submit" [disabled]="!form.valid">{{Id?'Add':'Update'}}Tour</button>
   </form>
 </div>

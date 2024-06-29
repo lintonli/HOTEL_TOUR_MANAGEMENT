@@ -8,7 +8,7 @@ import { TourRequest } from '../Models/tours';
   providedIn: 'root',
 })
 export class HotelsService {
-  private readonly Base_Url = ' http://localhost:4001/hotels';
+  private readonly Base_Url = ' http://localhost:4001/hotels/';
   constructor(private http: HttpClient) {}
 
 addHotel(newHotel:HotelRequest):Observable<HotelResponse>{
@@ -26,7 +26,7 @@ getHotelbyTour(TourId:string):Observable<IHotel[]>{
 deleteHotel(ID:string):Observable<HotelResponse>{
   return this.http.delete<HotelResponse>(this.Base_Url + ID)
 }
-updateHotel(ID:string, updatedHotel:TourRequest):Observable<HotelResponse>{
+updateHotel(ID:string, updatedHotel:HotelRequest):Observable<HotelResponse>{
   return this.http.patch<HotelResponse>(this.Base_Url + ID, updatedHotel)
 }
 

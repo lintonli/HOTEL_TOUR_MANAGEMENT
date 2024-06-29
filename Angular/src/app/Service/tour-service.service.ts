@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class TourServiceService {
-  private readonly Base_Url = 'http://localhost:4001/tours';
+  private readonly Base_Url = 'http://localhost:4001/tours/';
   constructor(private http:HttpClient) {}
   
 

@@ -10,6 +10,8 @@
     <p>Destination:{{ tour.TDestination }}</p>
     <p>Price:{{ tour.TPrice | currency:"KSH "}}</p>
     <button (click)="book(tour.Id)">BOOK NOW</button>
+    <button *ngIf="role === 'ADMIN'" (click)="editTour(tour.Id)">Edit</button>
+      <button *ngIf="role === 'ADMIN'" (click)="deleteTour(tour.Id)">Delete</button>
   </div>
 </div>
 <ng-template #noTours>
