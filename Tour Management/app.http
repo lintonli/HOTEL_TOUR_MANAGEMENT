@@ -112,7 +112,7 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:4001/booking/bookings
+GET http://localhost:4001/booking
 
 
 ###

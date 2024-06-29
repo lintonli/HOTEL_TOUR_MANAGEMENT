@@ -20,16 +20,7 @@ export const addTour = async (req: TourRequest, res: Response) => {
       DESTINATION:TDestination,
       PRICE:TPrice
     });
-    // const pool = await mssql.connect(sqlConfig);
-    // await pool
-    //   .request()
-    //   .input("ID", id)
-    //   .input("NAME", Tourname)
-    //   .input("IMAGE", Tourimage)
-    //   .input("DESTINATION", TDestination)
-    //   .input("DESCRIPTION", TDescription)
-    //   .input("PRICE", TPrice)
-    //   .execute("addTour");
+   
     return res.status(201).json({ message: "Tour created successfully" });
   } catch (error) {
     return res.status(500).json(error);

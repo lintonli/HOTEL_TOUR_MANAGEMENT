@@ -3,7 +3,7 @@ import { addBooking, deletebooking, getAllBookings, getBooking, updateBooking } 
 
 const bookingRoute= Router()
 bookingRoute.post("", addBooking)
-bookingRoute.get("/bookings", getAllBookings)
+bookingRoute.get("", getAllBookings)
 bookingRoute.get("/booking/:id", getBooking)
 bookingRoute.patch("/:id", updateBooking)
 bookingRoute.delete("/:id", deletebooking)

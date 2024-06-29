@@ -49,8 +49,8 @@ export const loginUser= async (req:Request, res:Response)=>{
                     UNAME:user[0].UNAME,
                     UROLE:user[0].UROLE
                 }
-                  console.log(user);
-                const token = Jwt.sign(payload, process.env.SECRET as string,{expiresIn:"1h"})
+                  // console.log(user);
+                const token = Jwt.sign(payload, process.env.SECRET as string,{expiresIn:"24"})
                 
                 return res.status(200).json({message:"Login successfull", token})
             }
