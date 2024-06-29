@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class BookingService {
-  private readonly Base_Url = 'http://localhost:4001/booking';
+  private readonly Base_Url = 'http://localhost:4001/booking/';
   constructor( private http: HttpClient) {}
 
   addBooking(newBooking:BookingRequest):Observable<BookingResponse>{
@@ -18,6 +18,9 @@ export class BookingService {
   }
   getBooking():Observable<IBooking[]>{
     return this.http.get<IBooking[]>(this.Base_Url)
+  }
+  getBookingId(Id:string):Observable<IBooking>{
+    return this.http.get<IBooking>(this.Base_Url+Id)
   }
   updateBooking(Id:string,updatedBooking:BookingRequest):Observable<BookingResponse>{
     return this.http.patch<BookingResponse>(this.Base_Url + Id, updatedBooking)

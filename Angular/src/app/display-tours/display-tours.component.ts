@@ -4,13 +4,15 @@ import { TourServiceService } from '../Service/tour-service.service';
 import { ITour } from '../Models/tours';
 import { DataService } from '../services/data.service';
 import { IBooking } from '../Models/bookings';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { jwtDecode } from 'jwt-decode';
+import { HeaderComponent } from '../header/header.component';
+import { ShortenPipe } from '../pipes/shorten.pipe';
 
 @Component({
   selector: 'app-display-tours',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,HeaderComponent, ShortenPipe,RouterModule],
   templateUrl: './display-tours.component.html',
   styleUrl: './display-tours.component.css',
 })
@@ -19,7 +21,9 @@ export class DisplayToursComponent implements OnInit {
   tours!:ITour[]
   booking!:IBooking[]
   role:string=''
-  constructor(private ts:TourServiceService, private bs:DataService, private router:Router){}
+  constructor(private ts:TourServiceService, private bs:DataService, private router:Router){
+
+  }
 
   ngOnInit(): void {
   //  this.tours= this.ts.getTours()

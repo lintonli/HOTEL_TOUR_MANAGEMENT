@@ -1,14 +1,26 @@
 .main{
     padding: 0%;
     margin: 0%;
+    
+  
 }
 .content {
   padding: 0%;
   margin-left: 20px;
   width: 100%;
   display: flex;
+  width: 100vw;
   gap: 10px;
   flex-wrap: wrap;
+  margin-top: 30px;
+}
+.contain{
+  background-image: url("https://cdn.pixabay.com/photo/2018/10/28/11/17/africa-3778524_640.jpg");
+  height: 100ch;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  
 }
 .items {
   display: flex;
@@ -23,4 +35,24 @@
   object-fit: cover;
   height: 200px;
   width: 200px;
+}
+.btn{
+  margin-top: 10px;
+  display: flex;
+  gap:20px;
+  justify-content: space-around;
+}
+.btn .edit{
+  background-color: green;
+  color: white;
+  border: none;
+
+}
+.btn .delete{
+  background-color: red;
+  border: none;
+}
+.items .book{
+  background-color: #1e81b0;
+  border: none;
 }

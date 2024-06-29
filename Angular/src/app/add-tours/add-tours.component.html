@@ -1,17 +1,18 @@
 <!-- <p>add-tours works!</p> -->
+ <app-header></app-header>
 <div class="main">
-  <h2>{{Id?'Add Tour': 'Update Tour'}}</h2>
+  <h2>{{Id?'Update Tour': 'Add Tour'}}</h2>
   <form class="content" [formGroup]="form" (ngSubmit)="onSubmit()">
     <label for="Name">Tour Name</label>
-    <input type="text" formControlName="NAME" />
+    <input type="text" formControlName="Tourname" />
     <label for="image">Tour Image</label>
-    <input type="text" formControlName="IMAGE" />
+    <input type="text" formControlName="Tourimage" />
     <label for="description">Tour Description</label>
-    <input type="text" formControlName="DESCRIPTION" />
+    <input type="text" formControlName="TDescription" />
     <label for="desination">Tour Destination</label>
-    <input type="text" formControlName="DESTINATION" />
+    <input type="text" formControlName="TDestination" />
     <label for="price">Tour Price</label>
-    <input type="number" formControlName="PRICE" />
-    <button type="submit" [disabled]="!form.valid">{{Id?'Add':'Update'}}Tour</button>
+    <input type="number" formControlName="TPrice" />
+    <button type="submit" [disabled]="!form.valid">{{Id?'Update':'Add'}}Tour</button>
   </form>
 </div>

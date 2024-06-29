@@ -1,1 +1,16 @@
-<p>display-booking works!</p>
+<!-- <p>display-booking works!</p> -->
+<app-header></app-header>
+ <div class="main" >
+    <h1><i>BOOKINGS</i></h1>
+    <div class="content" *ngFor="let booking of bookings">
+        <p>BookingID:{{booking.Id}}</p>
+        <!-- <p>{{booking.tourName}}</p>
+        <p>{{booking.hotelName}}</p> -->
+        <p>Startdate:{{booking.bstartdate}}</p>
+        <p>StartDate:{{booking.benddate}}</p>
+         <div class="btn">
+ <button class="edit" (click)="editBooking(booking.Id)">Edit</button>
+      <button class="delete" *ngIf="role === 'ADMIN'" (click)="deleteBooking(booking.Id)">Delete</button>
+    </div>
+    </div>
+ </div>

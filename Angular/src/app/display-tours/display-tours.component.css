@@ -1,29 +1,61 @@
 .main {
   display: flex;
   padding: 0%;
+  text-align: center;
   margin: 0%;
+  height: 100vh;
   width: 100vw;
   flex-direction: column;
+  /* background-image: url("https://cdn.pixabay.com/photo/2020/05/23/17/04/tour-eiffel-5210517_640.jpg"); */
+  /* background-color:#bcd9e7; */
 }
 .content {
   padding: 0%;
   margin-left: 20px;
+  height: 100vh;
   width: 100%;
   display: flex;
   gap: 10px;
+  /* background-color: #0c3446; */
+  background-image: url("https://cdn.pixabay.com/photo/2023/06/21/17/09/savannah-8079856_640.jpg");
+  
+  padding: 10px;
+  align-items: center;
+  justify-content: space-evenly;
   flex-wrap: wrap;
 }
 .items {
   display: flex;
+  /* height: 20%; */
   flex-direction: column;
   border: 1px solid black;
   background-color: aliceblue;
-  padding: 10px;
+  padding: 5px;
   align-items: center;
 
 }
+.items .book{
+  background-color: #1e81b0;
+  border: none;
+}
 .items p img {
   object-fit: cover;
-  height: 200px;
-  width: 200px;
+  height: 150px;
+  width: 150px;
+}
+.btn{
+  margin-top: 10px;
+  display: flex;
+  gap:20px;
+  justify-content: space-around;
+}
+.btn .edit{
+  background-color: green;
+  color: white;
+  border: none;
+
+}
+.btn .delete{
+  background-color: red;
+  border: none;
 }

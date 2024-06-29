@@ -1,18 +1,19 @@
-
- <!-- <div class="content1"> -->
-    <form (ngSubmit)="onSubmit()" [formGroup]="form" class="content1">
+<app-header></app-header>
+ <div class="content1">
+    <h2>{{Id?"Add Booking":"Update Booking"}}</h2>
+    <form (ngSubmit)="onSubmit()" [formGroup]="form">
 <div class="content">
     <label for="bstart"> Start Date</label>
-    <input type="date" formControlName="sdate">
+    <input type="date" formControlName="bstartdate">
 </div>
 <div class="content">
     <label for="bstart"> End Date</label>
-    <input type="date" formControlName="edate">
+    <input type="date" formControlName="benddate">
 </div>
 <div class="content">
     <label for="bstart"> BookingDate</label>
-    <input type="date" formControlName="bdate">
+    <input type="date" formControlName="bookingdate">
 </div>
-<button  type="submit" [disabled]="form.invalid">Add Booking</button>
+<button  type="submit" [disabled]="form.invalid">{{Id?"Add":"Update"}} Booking</button>
     </form>
- <!-- </div> -->
+ </div>

@@ -5,11 +5,12 @@ import { IHotel } from '../Models/hotels';
 import { HotelsService } from '../Service/hotels.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { jwtDecode } from 'jwt-decode';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-display-hotels',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,HeaderComponent],
   templateUrl: './display-hotels.component.html',
   styleUrl: './display-hotels.component.css'
 })
@@ -29,7 +30,7 @@ if(token){
 }
 
 this.TourId= this.route.snapshot.paramMap.get('TourId')!;
-this.data.getHotelbyTour(this.TourId).subscribe(hotel=>{
+this.data.getHotelsbyTour(this.TourId).subscribe(hotel=>{
   this.hotels=hotel
 })
 }

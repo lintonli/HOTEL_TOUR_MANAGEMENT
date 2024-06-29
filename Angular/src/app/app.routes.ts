@@ -15,6 +15,7 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: SignupComponent },
   { path: 'bookings', component: DisplayBookingComponent },
+  {path:"add-booking/:id", component:AddBookingComponent},
   { path: 'hotels', component: DisplayHotelsComponent },
   { path: 'add-hotel/:ID', component: AddHotelsComponent },
   {

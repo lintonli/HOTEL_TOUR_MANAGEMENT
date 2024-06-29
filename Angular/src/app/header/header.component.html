@@ -1,11 +1,11 @@
 <!-- <p>header works!</p> -->
  <div class="container">
-    <h1><a routerLink="home"></a><i>KIKWETU</i></h1>
-    <a routerLink="hotels">Hotels</a>
-    <a routerLink="tours">Tours</a>
-    <a routerLink="bookings">Bookings</a>
-    <a routerLink="login">Login</a>
-    <a routerLink="register">Register</a>
-    <a routerLink="login">Log out</a>
+    <h1><a routerLink="/"><i>KIKWETU</i></a></h1>
+    <a routerLink="/hotels">Hotels</a>
+    <a routerLink="/tours">Tours</a>
+    <a routerLink="/bookings">Bookings</a>
+    <a routerLink="/login" *ngIf="!auth.showLogin()">Login</a>
+    <a routerLink="/register"*ngIf="!auth.showLogin()">Register</a>
+    <a routerLink="/login">Log out</a>
 
  </div>

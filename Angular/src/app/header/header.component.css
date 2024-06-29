@@ -1,7 +1,7 @@
 .container{
     display: flex;
     justify-content: space-evenly;
-    background-color: green;
+    background-color: #1e81b0;
     width: 100vw;
     align-items: center;
     height: 150px;

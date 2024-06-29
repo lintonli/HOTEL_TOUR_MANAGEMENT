@@ -9,11 +9,13 @@ import {
 import { TourServiceService } from '../Service/tour-service.service';
 import { ITour } from '../Models/tours';
 import { ActivatedRoute, Router } from '@angular/router';
+import { jwtDecode } from 'jwt-decode';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-add-tours',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule],
+  imports: [FormsModule, ReactiveFormsModule,HeaderComponent],
   templateUrl: './add-tours.component.html',
   styleUrl: './add-tours.component.css',
 })
@@ -21,6 +23,7 @@ export class AddToursComponent implements OnInit {
   form!: FormGroup;
   tours: ITour[] = [];
   Id!: string;
+  userId!:string
   constructor(
     private router: Router,
     private ts: TourServiceService,
@@ -37,15 +40,9 @@ export class AddToursComponent implements OnInit {
           this.router.navigate(['tours']);
         });
 
-        // this.ts.addTour(this.form.value).subscribe((res) => {
-        //   console.log(res);
-        //   this.router.navigate(['tours'])
-        // });
+       
       } else {
-        // this.ts.updateTour(this.Id, tourData).subscribe(()=>{
-        //   console.log("Tour updated succcessfully")
-        //   this.router.navigate(['tours']);
-        // })
+       
         this.ts.addTour(this.form.value).subscribe((res) => {
           console.log(res);
           this.router.navigate(['tours']);
@@ -54,13 +51,18 @@ export class AddToursComponent implements OnInit {
     }
   }
   ngOnInit(): void {
+    const token = localStorage.getItem('token')
+    if(token){
+      const decode:any=jwtDecode(token)
+      this.userId=decode.SUB
+    }
     this.Id = this.route.snapshot.paramMap.get('Id')!;
     this.form = this.fb.group({
-      NAME: this.fb.control(null, Validators.required),
-      IMAGE: this.fb.control(null, Validators.required),
-      DESCRIPTION: this.fb.control(null, Validators.required),
-      DESTINATION: this.fb.control(null, Validators.required),
-      PRICE: this.fb.control(null, Validators.required),
+      Tourname: this.fb.control(null, Validators.required),
+      Tourimage: this.fb.control(null, Validators.required),
+      TDescription: this.fb.control(null, Validators.required),
+      TDestination: this.fb.control(null, Validators.required),
+      TPrice: this.fb.control(null, Validators.required),
     });
 
     if (this.Id) {

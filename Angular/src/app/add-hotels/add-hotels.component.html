@@ -1,17 +1,18 @@
 <!-- <p>add-hotels works!</p> -->
- <h2>{{ID? 'Update Hotel':'Add Hotel'}}</h2>
+ <app-header></app-header>
+ <h2>{{hotelId? 'Update Hotel':'Add Hotel'}}</h2>
  <form (ngSubmit)="onSubmit()" [formGroup]="form">
 <div>
     <label for="name">Hotel Name</label>
-    <input type="text" formControlName="name">
+    <input type="text" formControlName="Hotelname">
 </div>
 <div>
     <label for="name">Hotel Image</label>
-    <input type="text" formControlName="image">
+    <input type="text" formControlName="Hotelimage">
 </div>
 <div>
     <label for="name">Location</label>
-    <input type="text" formControlName="location">
+    <input type="text" formControlName="Hlocation">
 </div>
-<button  type="submit" [disabled]="form.invalid">{{ID? 'Add':'Update'}}Hotel</button>
+<button  type="submit" [disabled]="form.invalid">{{hotelId? 'Update':'Add'}} Hotel</button>
  </form>

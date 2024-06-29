@@ -1,8 +1,10 @@
 export interface IBooking {
   Id: string;
   userId: string;
+  tourName:string
   tourId: string;
   hotelId: string;
+  hotelName:string;
   bstartdate: string;
   benddate: string;
   bookingdate: string;
