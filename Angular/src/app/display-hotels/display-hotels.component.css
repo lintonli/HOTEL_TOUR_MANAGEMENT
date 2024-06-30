@@ -16,7 +16,9 @@
 }
 .contain{
   background-image: url("https://cdn.pixabay.com/photo/2018/10/28/11/17/africa-3778524_640.jpg");
-  height: 100ch;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */

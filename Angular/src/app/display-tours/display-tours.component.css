@@ -18,7 +18,8 @@
   gap: 10px;
   /* background-color: #0c3446; */
   background-image: url("https://cdn.pixabay.com/photo/2023/06/21/17/09/savannah-8079856_640.jpg");
-  
+  background-repeat: no-repeat;
+  background-size: cover;
   padding: 10px;
   align-items: center;
   justify-content: space-evenly;

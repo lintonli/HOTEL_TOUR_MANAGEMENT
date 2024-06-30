@@ -50,7 +50,7 @@ export const loginUser= async (req:Request, res:Response)=>{
                     UROLE:user[0].UROLE
                 }
                   // console.log(user);
-                const token = Jwt.sign(payload, process.env.SECRET as string,{expiresIn:"24"})
+                const token = Jwt.sign(payload, process.env.SECRET as string,{expiresIn:"2h"})
                 
                 return res.status(200).json({message:"Login successfull", token})
             }

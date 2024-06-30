@@ -1,13 +1,13 @@
 POST  http://localhost:4001/tours
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTVUIiOiI1MDIwNDFjMS0yYWYxLTQxZmQtOGY2Ni04M2I1YzhmYTkyZDYiLCJVTkFNRSI6IkVkaW11bmQiLCJVUk9MRSI6IkFETUlOIiwiaWF0IjoxNzE5NTExNTQ5LCJleHAiOjE3MTk1MTUxNDl9.LilfLxVvHWiAgXl080GPpm-EwFZFjYZ7s9l_ynKOmhM
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTVUIiOiI1MDIwNDFjMS0yYWYxLTQxZmQtOGY2Ni04M2I1YzhmYTkyZDYiLCJVTkFNRSI6IkVkaW11bmQiLCJVUk9MRSI6IkFETUlOIiwiaWF0IjoxNzE5NzQwNzI0LCJleHAiOjE3MTk3NDc5MjR9.HiuvO6URnoNSnXOvSNXNOCrvRKwmASgFEH9uZaSDWv4
 Content-Type: application/json
 
 {
-    "Tourname":"Bonefire adventures",
+    "Tourname":"Kevin adventures",
     "Tourimage":"https://cdn.pixabay.com/photo/2020/12/03/08/05/giraffe-5799824_640.jpg",
-    "TDestination":"Ambosseli game park",
+    "TDestination":"Lake Nakuru",
     "TDescription":"Experience nature at its best",
-    "TPrice":"35000"
+    "TPrice":"45000"
 }
 
 #####
@@ -25,15 +25,15 @@ token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTVUIiOiJjOGFjMDQwZS1hMmVhLTRkYmYtO
 ####
 
 PATCH   http://localhost:4001/tours/491b239d-5e7a-4d7d-98cd-ed9934d912a4
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTVUIiOiJjOGFjMDQwZS1hMmVhLTRkYmYtOWJmMS04Y2MyYmUxNmNhZjIiLCJVTkFNRSI6IkxpbnRvbiIsImlhdCI6MTcxODYxMzQ0MiwiZXhwIjoxNzE4NjE3MDQyfQ.3nrxaMcDHD_it952--pYtCqhKqRxq81l4tRR1BuO5Qg
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTVUIiOiI1MDIwNDFjMS0yYWYxLTQxZmQtOGY2Ni04M2I1YzhmYTkyZDYiLCJVTkFNRSI6IkVkaW11bmQiLCJVUk9MRSI6IkFETUlOIiwiaWF0IjoxNzE5NzQwNTIwLCJleHAiOjE3MTk3NDA1MjB9.Ou9TRn53MCrfAZ4rIT2lVeB94s-bMny0T8LtAmT-xlw
 Content-Type: application/json
 
 {
-    "Tourname":"Bonefire adventures",
+    "Tourname":"Kevin adventures",
     "Tourimage":"https://cdn.pixabay.com/photo/2020/12/03/08/05/giraffe-5799824_640.jpg",
-    "TDestination":"Maasai Mara",
+    "TDestination":"Lake Nakuru",
     "TDescription":"Experience nature at its best",
-    "TPrice":"35000"
+    "TPrice":"45000"
 }
 
 ####
